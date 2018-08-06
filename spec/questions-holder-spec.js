@@ -14,10 +14,15 @@ describe('QuestionsHolder', function() {
     const sqlQuestion = new Question(1, 100, 'SQL', 'What keyword selects all contents from a table?', ' * ');
     const csharpQuestion = new Question(1, 100, 'CSharp', 'How would you declare an array of numbers?', 'int[] myArray = [1,2,3]');
     const rubyQuestion = new Question(1, 100, 'Ruby', 'How would you split a sentence into words?', "words_string.split('')");
-    expect(questionsHolder.htmlCss).toContain(htmlQuestion);
-    expect(questionsHolder.javascript).toContain(jsQuestion);
-    expect(questionsHolder.sql).toContain(sqlQuestion);
-    expect(questionsHolder.csharp).toContain(csharpQuestion);
-    expect(questionsHolder.ruby).toContain(rubyQuestion);
+    expect(questionsHolder.category.htmlCss).toContain(htmlQuestion);
+    expect(questionsHolder.category.javascript).toContain(jsQuestion);
+    expect(questionsHolder.category.sql).toContain(sqlQuestion);
+    expect(questionsHolder.category.csharp).toContain(csharpQuestion);
+    expect(questionsHolder.category.ruby).toContain(rubyQuestion);
   });
+
+
+
+
+
 });

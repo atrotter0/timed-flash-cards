@@ -7,4 +7,8 @@ export class Game {
     this.timer = 0; //change this
     this.questions = new QuestionsHolder();
   }
+
+  findByCategory(category){
+    return this.questions.category[category];
+  }
 }

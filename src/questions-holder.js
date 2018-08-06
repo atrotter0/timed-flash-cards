@@ -2,11 +2,13 @@ import { Question } from './question';
 
 export class QuestionsHolder {
   constructor() {
-    this.htmlCss = this.buildHtmlCssQuestions();
-    this.javascript = this.buildJavascriptQuestions();
-    this.sql = this.buildSqlQuestions();
-    this.csharp = this.buildCsharpQuestions();
-    this.ruby = this.buildRubyQuestions();
+    this.category = {
+      htmlCss: this.buildHtmlCssQuestions(),
+      javascript: this.buildJavascriptQuestions(),
+      sql: this.buildSqlQuestions(),
+      csharp: this.buildCsharpQuestions(),
+      ruby: this.buildRubyQuestions()
+    };
   }
 
   buildHtmlCssQuestions() {
