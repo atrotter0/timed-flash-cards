@@ -1,4 +1,4 @@
-import { Queston } from './question';
+import { Question } from './question';
 import { QuestionsHolder } from './questions-holder';
 import { Game } from './game';
 import $ from 'jquery';
@@ -31,15 +31,30 @@ function buildCards(questionsArray) {
 function playByCategory(category) {
   const questionsArray = game.findByCategory(category);
   buildCards(questionsArray);
+  startGame();
 }
 
 function playByLevel(level) {
+  console.log(game.questions);
   const questionsArray = game.findByLevel(level);
   buildCards(questionsArray);
+  startGame();
 }
 
 function playWithAll() {
   buildCards(game.getAllQuestions());
+  startGame();
+}
+
+function startGame(){
+  let question = game.deck[0];
+  displayQuestion(question);
+}
+
+function displayQuestion(question) {
+  $("#question-category").text(question.category);
+  $("#question-text").text(question.text);
+  $("#question-answer").text(question.answer);
 }
 
 $(document).ready(function() {
@@ -55,11 +70,22 @@ $(document).ready(function() {
 
   $("#allBtn").click(function() {
     toggleMainScreen();
-    //show cards
+    playWithAll();
   });
 
   $(".backBtn").click(function() {
     toggleMainScreen();
     hideCategoryAndLevel();
+  });
+
+  $("#playCategory").click(function() {
+    const category = $("#selectCategory").val();
+    playByCategory(category);
+  });
+
+  $("#playLevel").click(function() {
+    const level = $("#selectLevel").val();
+    console.log(level);
+    playByLevel(level);
   });
 });

@@ -29,7 +29,7 @@ export class Game {
     const keysArray = Object.keys(this.questions.category);
     keysArray.forEach((key) => {
       this.questions.category[key].forEach(function(question) {
-        if (question.level === level) levelMatches.push(question);
+        if (question.level === parseInt(level)) levelMatches.push(question);
       });
     });
     return levelMatches;

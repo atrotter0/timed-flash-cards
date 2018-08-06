@@ -14,7 +14,7 @@
         <button id="allBtn" class="btn btn-lg btn-primary">Play All</button>
       </div>
       <div id="categorySelect">
-        <select class="form-control">
+        <select class="form-control" id="selectCategory">
           <option value="">Select A Category</option>
           <option value="htmlCss">HTML/CSS</option>
           <option value="javascript">JavaScript</option>
@@ -22,29 +22,29 @@
           <option value="csharp">C#</option>
           <option value="ruby">Ruby</option>
         </select>
-        <button class="btn btn-lg btn-primary">Play Now</button>
+        <button class="btn btn-lg btn-primary" id="playCategory">Play Now</button>
         <button class="btn btn-lg btn-primary backBtn">Back</button>
       </div>
       <div id="levelSelect">
-        <select class="form-control">
+        <select class="form-control" id="selectLevel">
           <option value="">Select A Level</option>
-          <option value="0">1</option>
-          <option value="1">2</option>
-          <option value="2">3</option>
-          <option value="3">4</option>
-          <option value="4">5</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
         </select>
-        <button class="btn btn-lg btn-primary">Play Now</button>
+        <button class="btn btn-lg btn-primary" id="playLevel">Play Now</button>
         <button class="btn btn-lg btn-primary backBtn">Back</button>
       </div>
     </div>
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">sample</h4>
-        <p class="card-text">what ids ./,';fkg;k'df</p>
-        <h3 id="#answer"></h3>
-        <button id="#correct" class="btn btn-success">Correct!</button>
-        <button id="#wrong" class="btn btn-danger">Wrong!</button>
+        <h4 class="card-title" id="question-category"></h4>
+        <p class="card-text" id="question-text">=</p>
+        <h3 id="question-answer"></h3>
+        <button id="correct" class="btn btn-success">Correct!</button>
+        <button id="wrong" class="btn btn-danger">Wrong!</button>
       </div>
     </div>
   </div>
