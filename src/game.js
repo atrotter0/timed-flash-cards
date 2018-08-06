@@ -5,7 +5,19 @@ export class Game {
   constructor() {
     this.score = 0;
     this.timer = 0;
+    this.deck = [];
     this.questions = new QuestionsHolder();
+  }
+
+  getAllQuestions() {
+    const allQuestions = [];
+    const keysArray = Object.keys(this.questions.category);
+    keysArray.forEach((key) => {
+      this.questions.category[key].forEach(function(question) {
+        allQuestions.push(question);
+      });
+    });
+    return allQuestions;
   }
 
   findByCategory(category) {

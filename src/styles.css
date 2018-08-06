@@ -13,3 +13,8 @@ select {
 #categorySelect, #levelSelect {
   display: none;
 }
+
+.card {
+align-items: center;
+
+}
