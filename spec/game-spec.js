@@ -48,5 +48,18 @@ describe('Game', function() {
     expect(game.timer).toEqual(5);
   });
 
+  it('should increment score by value', function() {
+    game.plusScore(100);
+    game.plusScore(200);
+    expect(game.score).toEqual(300);
+  });
+
+  it('should decrement score by value', function() {
+    game.minusScore(100);
+    game.minusScore(200);
+    expect(game.score).toEqual(-300);
+  });
+
+
 
 });
