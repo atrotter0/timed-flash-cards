@@ -34,15 +34,11 @@ export class Game {
      this.timer = 10;
   }
 
-  plusScore(value){
+  plusScore(value) {
     this.score += value;
   }
 
-  minusScore(value){
+  minusScore(value) {
     this.score -= value;
   }
-
-
-
-
 }

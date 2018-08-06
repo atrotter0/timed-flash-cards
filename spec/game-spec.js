@@ -36,12 +36,12 @@ describe('Game', function() {
     expect(game.findByLevel(1)).toEqual(expectedArray);
   });
 
-  it ('should reset timer', function() {
+  it('should reset timer', function() {
     game.resetTimer();
     expect(game.timer).toEqual(10);
   });
 
-  it ('should decrement timer every second', function() {
+  it('should decrement timer every second', function() {
     jasmine.clock().install();
     game.startTimer();
     jasmine.clock().tick(5001);
@@ -59,7 +59,4 @@ describe('Game', function() {
     game.minusScore(200);
     expect(game.score).toEqual(-300);
   });
-
-
-
 });

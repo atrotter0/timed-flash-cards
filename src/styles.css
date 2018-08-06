@@ -1,4 +1,15 @@
 body {
-  background-color: #013220;
-  color: #ffffff;
+  color: #00000;
+}
+
+select {
+  margin-bottom: 20px;
+}
+
+#mainScreen, #categorySelect, #levelSelect {
+  margin-bottom: 40px;
+}
+
+#categorySelect, #levelSelect {
+  display: none;
 }

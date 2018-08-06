@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Add Title Here</title>
+  <title>Timed Programming Flashcards</title>
 </head>
 <body>
   <div class="container">
-    <h1>Some new JavaScript Project</h1>
+    <div class="jumbotron">
+      <div id="mainScreen">
+        <h1>Programming Flashcards</h1>
+        <p>Click below to test your programming knowledge!</p>
+        <button id="categoryBtn" class="btn btn-lg btn-primary">Play By Category</button>
+        <button id="levelBtn" class="btn btn-lg btn-primary">Play By Level</button>
+        <button id="allBtn" class="btn btn-lg btn-primary">Play All</button>
+      </div>
+      <div id="categorySelect">
+        <select class="form-control">
+          <option value="">Select A Category</option>
+          <option value="htmlCss">HTML/CSS</option>
+          <option value="javascript">JavaScript</option>
+          <option value="sql">SQL</option>
+          <option value="csharp">C#</option>
+          <option value="ruby">Ruby</option>
+        </select>
+        <button class="btn btn-lg btn-primary">Play Now</button>
+        <button class="btn btn-lg btn-primary backBtn">Back</button>
+      </div>
+      <div id="levelSelect">
+        <select class="form-control">
+          <option value="">Select A Level</option>
+          <option value="0">1</option>
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+          <option value="4">5</option>
+        </select>
+        <button class="btn btn-lg btn-primary">Play Now</button>
+        <button class="btn btn-lg btn-primary backBtn">Back</button>
+      </div>
+    </div>
   </div>
 </body>
 </html>
