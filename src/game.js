@@ -8,7 +8,13 @@ export class Game {
     this.questions = new QuestionsHolder();
   }
 
-  findByCategory(category){
+  findByCategory(category) {
     return this.questions.category[category];
+  }
+
+  findByLevel(level) {
+    const levelMatches = [];
+    const keysArray = Object.keys(this.questions.category);
+    return keysArray;
   }
 }
