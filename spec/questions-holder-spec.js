@@ -20,9 +20,4 @@ describe('QuestionsHolder', function() {
     expect(questionsHolder.category.csharp).toContain(csharpQuestion);
     expect(questionsHolder.category.ruby).toContain(rubyQuestion);
   });
-
-
-
-
-
 });

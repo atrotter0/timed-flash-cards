@@ -4,7 +4,7 @@ import { QuestionsHolder } from './questions-holder';
 export class Game {
   constructor() {
     this.score = 0;
-    this.timer = 0; //change this
+    this.timer = 0;
     this.questions = new QuestionsHolder();
   }
 
@@ -15,6 +15,23 @@ export class Game {
   findByLevel(level) {
     const levelMatches = [];
     const keysArray = Object.keys(this.questions.category);
-    return keysArray;
+    keysArray.forEach((key) => {
+      this.questions.category[key].forEach(function(question) {
+        if (question.level === level) levelMatches.push(question);
+      });
+    });
+    return levelMatches;
   }
+
+  startTimer() {
+    this.resetTimer();
+    setInterval(() => {
+      this.timer--;
+    }, 1000);
+  }
+
+  resetTimer() {
+     this.timer = 10;
+  }
+
 }
