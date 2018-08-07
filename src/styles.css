@@ -46,6 +46,10 @@ select {
   text-align: center;
 }
 
+#correctResults, #incorrectResults {
+  font-size: 18px;
+}
+
 #scoreResults {
   margin: 0 auto 30px auto;
   text-align: center;
@@ -60,4 +64,10 @@ select {
 .giphy-image {
   margin: 40px auto;
   text-align: center;
+}
+
+#resetGame {
+  margin: 0 auto;
+  margin-top: 30px;
+  display: block;
 }

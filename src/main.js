@@ -239,4 +239,8 @@ $(document).ready(function() {
       showTimer();
     }
   });
+
+  $("#resetGame").click(function() {
+    location.reload();
+  });
 });

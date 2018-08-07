@@ -39,7 +39,6 @@ export class Game {
     return levelMatches;
   }
 
-
   resetTimer() {
      this.timer = 10;
   }
