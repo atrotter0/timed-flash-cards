@@ -123,6 +123,7 @@ function displayQuestion(question) {
 }
 
 function showResults() {
+  requestGIF();
   loadResults();
   toggleCards();
   toggleResults();
@@ -144,6 +145,26 @@ function loadQuestionResults(questionsArray, id) {
 
 function displayScoreResults() {
   $("#scoreResults").text("Total Score: " + game.score);
+}
+
+function requestGIF(){
+  let param ='batman';
+  $.ajax({
+     url: `http://api.giphy.com/v1/gifs/search?q=${param}&api_key=74aZdG8yOE2jhi7XoRIsNBQHfACCs8Lo&limit=5`,
+     type: 'GET',
+     data: {
+       format: 'json'
+     },
+     success: function(response) {
+       console.log(response);
+       console.log(response.data.img_url);
+       // $('.showHumidity').text(`The humidity in ${city} is ${response.main.url}%`);
+      $('#scoreGif').append("<img src='" + response.data.img_url + "' alt='random gif'>");
+     },
+     error: function() {
+       console.log('error image');
+     }
+   });
 }
 
 $(document).ready(function() {
