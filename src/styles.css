@@ -47,7 +47,17 @@ select {
 }
 
 #scoreResults {
-  margin: 40px auto;
+  margin: 0 auto;
   text-align: center;
   font-size: 2em;
+}
+
+#scoreGif {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.giphy-image {
+  margin: 40px auto;
+  text-align: center;
 }

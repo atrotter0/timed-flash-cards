@@ -147,24 +147,31 @@ function displayScoreResults() {
   $("#scoreResults").text("Total Score: " + game.score);
 }
 
-function requestGIF(){
-  let param ='batman';
+function requestGIF() {
+  let tag = getTagByScore();
   $.ajax({
-     url: `http://api.giphy.com/v1/gifs/search?q=${param}&api_key=74aZdG8yOE2jhi7XoRIsNBQHfACCs8Lo&limit=5`,
+     url: `http://api.giphy.com/v1/gifs/random?&api_key=74aZdG8yOE2jhi7XoRIsNBQHfACCs8Lo&tag=${tag}`,
      type: 'GET',
      data: {
        format: 'json'
      },
      success: function(response) {
-       console.log(response);
-       console.log(response.data.img_url);
-       // $('.showHumidity').text(`The humidity in ${city} is ${response.main.url}%`);
-      $('#scoreGif').append("<img src='" + response.data.img_url + "' alt='random gif'>");
+      $('#scoreGif').append("<img src='" + response.data.image_url + "' class='giphy-image' alt='random gif'>");
      },
      error: function() {
-       console.log('error image');
+       console.log('Error obtaining image.');
      }
    });
+}
+
+function getTagByScore() {
+  if (game.score >= 500) {
+    return 'perfect';
+  } else if (game.score >= 0) {
+    return 'happy';
+  } else {
+    return 'sad';
+  }
 }
 
 $(document).ready(function() {
