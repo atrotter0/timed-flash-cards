@@ -130,6 +130,7 @@ function showResults() {
 }
 
 function loadResults() {
+  console.log(game.correctQuestions);
   loadQuestionResults(game.correctQuestions, "#correctResults");
   loadQuestionResults(game.wrongQuestions, "#incorrectResults");
   displayScoreResults();
@@ -220,8 +221,8 @@ $(document).ready(function() {
       runCorrectQuestion();
       showResults();
     } else {
-      nextCard();
       runCorrectQuestion();
+      nextCard();
       toggleAnswerSection();
       showTimer();
     }
@@ -232,8 +233,8 @@ $(document).ready(function() {
       runWrongQuestion();
       showResults();
     } else {
-      nextCard();
       runWrongQuestion();
+      nextCard();
       toggleAnswerSection();
       showTimer();
     }
