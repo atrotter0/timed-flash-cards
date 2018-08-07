@@ -7,6 +7,10 @@ export class Game {
     this.timer = 0;
     this.deck = [];
     this.questions = new QuestionsHolder();
+    this.currentQuestionIndex = 0;
+    this.currentQuestion = [];
+    this.correctQuestions = [];
+    this.wrongQuestions = [];
   }
 
   getAllQuestions() {

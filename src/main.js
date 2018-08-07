@@ -12,6 +12,10 @@ function toggleMainScreen() {
   $("#mainScreen").toggle();
 }
 
+function toggleAnswerSection() {
+  $('#answerSection').toggle();
+}
+
 function toggleJumbotron() {
   $(".jumbotron").toggle();
 }
@@ -39,23 +43,43 @@ function buildCards(questionsArray) {
 function playByCategory(category) {
   const questionsArray = game.findByCategory(category);
   buildCards(questionsArray);
-  startGame();
+  runGame();
 }
 
 function playByLevel(level) {
   const questionsArray = game.findByLevel(level);
   buildCards(questionsArray);
-  startGame();
+  runGame();
 }
 
 function playWithAll() {
   buildCards(game.getAllQuestions());
-  startGame();
+  runGame();
 }
 
-function startGame(){
-  let question = game.deck[0];
+function runGame(){
+  if (game.currentQuestion.length > 0) game.currentQuestion = [];
+
+  let question = game.deck[game.currentQuestionIndex];
+  game.currentQuestion.push(question);
   displayQuestion(question);
+}
+
+function nextCard() {
+  game.currentQuestionIndex++;
+  runGame();
+}
+
+function runCorrectQuestion() {
+  let points = game.currentQuestion[0].points;
+  game.correctQuestions.push(game.currentQuestion[0]);
+  game.plusScore(points);
+}
+
+function runWrongQuestion() {
+  let points = game.currentQuestion[0].points;
+  game.wrongQuestions.push(game.currentQuestion[0]);
+  game.minusScore(points);
 }
 
 function displayQuestion(question) {
@@ -100,4 +124,23 @@ $(document).ready(function() {
     const level = $("#selectLevel").val();
     playByLevel(level);
   });
+
+  $("#show").click(function() {
+    toggleAnswerSection();
+  });
+
+  $("#correct").click(function() {
+    nextCard();
+    runCorrectQuestion();
+    toggleAnswerSection();
+  });
+
+  $("#wrong").click(function() {
+    nextCard();
+    runWrongQuestion();
+    toggleAnswerSection();
+  });
+
+
+
 });

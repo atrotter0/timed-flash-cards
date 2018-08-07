@@ -25,21 +25,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: [
-          /node_modules/,
-          /spec/
-        ],
-        loader: "eslint-loader"
-      },
-      {
         test: /\.css$/,
         use: [
           'style-loader',
           'css-loader'
         ]
       },
-      {              
+      {
         test: /\.js$/,
         exclude: [
           /node_modules/,
@@ -49,6 +41,14 @@ module.exports = {
         options: {
           presets: ['es2015']
         }
+      },
+      {
+        test: /\.js$/,
+        exclude: [
+          /node_modules/,
+          /spec/
+        ],
+        loader: "eslint-loader"
       }
     ]
   }
