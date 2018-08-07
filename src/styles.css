@@ -31,6 +31,11 @@ select {
   display: none;
 }
 
+#timer {
+  float: right;
+  color: red;
+}
+
 .gridContainer {
   display: grid;
   grid-template-columns: auto auto;
@@ -50,6 +55,18 @@ select {
   font-size: 18px;
   text-align: left;
   list-style-type: none;
+}
+
+.fas {
+  margin-right: 10px;
+}
+
+.correct-icon {
+  color: green;
+}
+
+.incorrect-icon {
+  color: red;
 }
 
 #scoreResults {
@@ -72,16 +89,4 @@ select {
   margin: 0 auto;
   margin-top: 30px;
   display: block;
-}
-
-.fas {
-  margin-right: 10px;
-}
-
-.correct-icon {
-  color: green;
-}
-
-.incorrect-icon {
-  color: red;
 }
