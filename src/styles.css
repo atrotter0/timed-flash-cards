@@ -48,6 +48,8 @@ select {
 
 #correctResults, #incorrectResults {
   font-size: 18px;
+  text-align: left;
+  list-style-type: none;
 }
 
 #scoreResults {
@@ -70,4 +72,16 @@ select {
   margin: 0 auto;
   margin-top: 30px;
   display: block;
+}
+
+.fas {
+  margin-right: 10px;
+}
+
+.correct-icon {
+  color: green;
+}
+
+.incorrect-icon {
+  color: red;
 }

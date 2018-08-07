@@ -131,17 +131,20 @@ function showResults() {
 
 function loadResults() {
   console.log(game.correctQuestions);
-  loadQuestionResults(game.correctQuestions, "#correctResults");
-  loadQuestionResults(game.wrongQuestions, "#incorrectResults");
+  loadQuestionResults(game.correctQuestions, "#correctResults", "correct");
+  loadQuestionResults(game.wrongQuestions, "#incorrectResults", "incorrect");
   displayScoreResults();
 }
 
-function loadQuestionResults(questionsArray, id) {
-  let questionText = "";
+function loadQuestionResults(questionsArray, id, questionType) {
   questionsArray.forEach(function(question) {
-    questionText += question.text + "</br>";
+    if (questionType === "correct") {
+      $(id).append("<li><i class='fas fa-check correct-icon'></i>" + question.text + "</li>");
+    } else {
+      $(id).append("<li><i class='fas fa-times incorrect-icon'></i>" + question.text + "</li>");
+    }
   });
-  $(id).append(questionText);
+
 }
 
 function displayScoreResults() {
