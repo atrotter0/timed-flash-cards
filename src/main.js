@@ -21,7 +21,11 @@ function toggleJumbotron() {
 }
 
 function toggleCards() {
-  $(".card").show();
+  $(".card").toggle();
+}
+
+function toggleResults() {
+  $("#testResults").toggle();
 }
 
 function hideCategoryAndLevel() {
@@ -88,6 +92,30 @@ function displayQuestion(question) {
   $("#question-answer").text(question.answer);
 }
 
+function showResults() {
+  loadResults();
+  toggleCards();
+  toggleResults();
+}
+
+function loadResults() {
+  loadQuestionResults(game.correctQuestions, "#correctResults");
+  loadQuestionResults(game.wrongQuestions, "#incorrectResults");
+  displayScoreResults();
+}
+
+function loadQuestionResults(questionsArray, id) {
+  let questionText = "";
+  questionsArray.forEach(function(question) {
+    questionText += question.text + "</br>";
+  });
+  $(id).append(questionText);
+}
+
+function displayScoreResults() {
+  $("#scoreResults").text("Score: " + game.score);
+}
+
 $(document).ready(function() {
   $("#categoryBtn").click(function() {
     toggleMainScreen();
@@ -130,17 +158,24 @@ $(document).ready(function() {
   });
 
   $("#correct").click(function() {
-    nextCard();
-    runCorrectQuestion();
-    toggleAnswerSection();
+    if (game.currentQuestionIndex === (game.deck.length -1)) {
+      runCorrectQuestion();
+      showResults();
+    } else {
+      nextCard();
+      runCorrectQuestion();
+      toggleAnswerSection();
+    }
   });
 
   $("#wrong").click(function() {
-    nextCard();
-    runWrongQuestion();
-    toggleAnswerSection();
+    if (game.currentQuestionIndex === (game.deck.length -1)) {
+      runWrongQuestion();
+      showResults();
+    } else {
+      nextCard();
+      runWrongQuestion();
+      toggleAnswerSection();
+    }
   });
-
-
-
 });
