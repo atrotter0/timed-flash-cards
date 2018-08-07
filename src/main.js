@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 const game = new Game();
+let interval;
 
 function toggleMainScreen() {
   $("#mainScreen").toggle();
@@ -26,6 +27,14 @@ function toggleCards() {
 
 function toggleResults() {
   $("#testResults").toggle();
+}
+
+function toggleTimer() {
+  $('#timer').toggle();
+}
+
+function showTimer() {
+  $('#timer').show();
 }
 
 function hideCategoryAndLevel() {
@@ -67,7 +76,28 @@ function runGame(){
   let question = game.deck[game.currentQuestionIndex];
   game.currentQuestion.push(question);
   displayQuestion(question);
+  startTimer();
 }
+
+function updateTimer() {
+  $('#timerDisplay').text(game.timer);
+}
+
+function startTimer() {
+  game.resetTimer();
+  clearInterval(interval);
+  updateTimer();
+  interval = setInterval(() => {
+    game.timer--;
+    updateTimer();
+    if (game.timer === 0){
+      toggleAnswerSection();
+      toggleTimer();
+      clearInterval(interval);
+    }
+  }, 1000);
+}
+
 
 function nextCard() {
   game.currentQuestionIndex++;
@@ -113,7 +143,7 @@ function loadQuestionResults(questionsArray, id) {
 }
 
 function displayScoreResults() {
-  $("#scoreResults").text("Score: " + game.score);
+  $("#scoreResults").text("Total Score: " + game.score);
 }
 
 $(document).ready(function() {
@@ -153,7 +183,7 @@ $(document).ready(function() {
     playByLevel(level);
   });
 
-  $("#show").click(function() {
+  $("#showAnswer").click(function() {
     toggleAnswerSection();
   });
 
@@ -165,6 +195,7 @@ $(document).ready(function() {
       nextCard();
       runCorrectQuestion();
       toggleAnswerSection();
+      showTimer();
     }
   });
 
@@ -176,6 +207,7 @@ $(document).ready(function() {
       nextCard();
       runWrongQuestion();
       toggleAnswerSection();
+      showTimer();
     }
   });
 });

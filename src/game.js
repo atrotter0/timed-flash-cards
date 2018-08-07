@@ -4,7 +4,7 @@ import { QuestionsHolder } from './questions-holder';
 export class Game {
   constructor() {
     this.score = 0;
-    this.timer = 0;
+    this.timer = 10;
     this.deck = [];
     this.questions = new QuestionsHolder();
     this.currentQuestionIndex = 0;
@@ -39,12 +39,6 @@ export class Game {
     return levelMatches;
   }
 
-  startTimer() {
-    this.resetTimer();
-    setInterval(() => {
-      this.timer--;
-    }, 1000);
-  }
 
   resetTimer() {
      this.timer = 10;
