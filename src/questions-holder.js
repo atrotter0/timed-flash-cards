@@ -45,7 +45,7 @@ export class QuestionsHolder {
 
   buildRubyQuestions() {
     const questions = [];
-    const question1 = new Question(1, 100, 'Ruby', 'How would you split a sentence into words?', "words_string.split('')");
+    const question1 = new Question(1, 100, 'Ruby', 'What method would you segment a sentence string into individual words?', ".split");
 
     questions.push(question1);
     return questions;

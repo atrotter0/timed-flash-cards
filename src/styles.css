@@ -15,6 +15,13 @@ select {
 }
 
 .card {
-align-items: center;
+  display: none;
+  align-items: center;
+  width: 70%;
+  margin: 20px auto;
+  max-width: 800px;
+}
 
+#answerSection {
+  display: none;
 }

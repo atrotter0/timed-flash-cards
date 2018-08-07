@@ -12,6 +12,14 @@ function toggleMainScreen() {
   $("#mainScreen").toggle();
 }
 
+function toggleJumbotron() {
+  $(".jumbotron").toggle();
+}
+
+function toggleCards() {
+  $(".card").show();
+}
+
 function hideCategoryAndLevel() {
   $("#categorySelect").hide();
   $("#levelSelect").hide();
@@ -35,7 +43,6 @@ function playByCategory(category) {
 }
 
 function playByLevel(level) {
-  console.log(game.questions);
   const questionsArray = game.findByLevel(level);
   buildCards(questionsArray);
   startGame();
@@ -70,6 +77,8 @@ $(document).ready(function() {
 
   $("#allBtn").click(function() {
     toggleMainScreen();
+    toggleJumbotron();
+    toggleCards();
     playWithAll();
   });
 
@@ -79,13 +88,16 @@ $(document).ready(function() {
   });
 
   $("#playCategory").click(function() {
+    toggleJumbotron();
+    toggleCards();
     const category = $("#selectCategory").val();
     playByCategory(category);
   });
 
   $("#playLevel").click(function() {
+    toggleJumbotron();
+    toggleCards();
     const level = $("#selectLevel").val();
-    console.log(level);
     playByLevel(level);
   });
 });

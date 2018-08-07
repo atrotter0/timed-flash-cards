@@ -11,9 +11,10 @@
         <p>Click below to test your programming knowledge!</p>
         <button id="categoryBtn" class="btn btn-lg btn-primary">Play By Category</button>
         <button id="levelBtn" class="btn btn-lg btn-primary">Play By Level</button>
-        <button id="allBtn" class="btn btn-lg btn-primary">Play All</button>
+        <button id="allBtn" class="btn btn-lg btn-primary">Play With All Cards</button>
       </div>
       <div id="categorySelect">
+        <p>Please set a category for your deck of random questions.</p>
         <select class="form-control" id="selectCategory">
           <option value="">Select A Category</option>
           <option value="htmlCss">HTML/CSS</option>
@@ -26,6 +27,7 @@
         <button class="btn btn-lg btn-primary backBtn">Back</button>
       </div>
       <div id="levelSelect">
+        <p>Please set a level of difficulty for your deck of random questions.</p>
         <select class="form-control" id="selectLevel">
           <option value="">Select A Level</option>
           <option value="1">1</option>
@@ -41,10 +43,13 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title" id="question-category"></h4>
-        <p class="card-text" id="question-text">=</p>
-        <h3 id="question-answer"></h3>
-        <button id="correct" class="btn btn-success">Correct!</button>
-        <button id="wrong" class="btn btn-danger">Wrong!</button>
+        <p class="card-text" id="question-text"></p>
+        <button class="btn btn-lg btn-primary">Show Answer</button>
+        <div id="answerSection">
+          <h3 id="question-answer"></h3>
+          <button id="correct" class="btn btn-success">Correct!</button>
+          <button id="wrong" class="btn btn-danger">Wrong!</button>
+        </div>
       </div>
     </div>
   </div>
