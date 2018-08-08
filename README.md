@@ -1,10 +1,12 @@
-# Project Title
+# Timed Flash Cards
 
-#### Epicodus JavaScript exercise, Date
+#### Epicodus JavaScript exercise, 08.06.18 - 08.07.18
 
-#### By Your Name Here
+#### By Abel Trotter & Scott Fraser
 
 ## Description
+
+A set of timed flashcards where a user can select specific categories, levels of difficulty, or all cards to practice programming principles and terminology.
 
 ## Setup on OSX
 
@@ -39,4 +41,4 @@
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2018 **Your Name Here**
+Copyright (c) 2018 **Abel Trotter & Scott Fraser**
